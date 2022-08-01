@@ -9,33 +9,11 @@ tags: []
 paths: {}
 components:
   schemas:
-    Sort:
-      type: object
-      properties:
-        empty:
-          type: boolean
-        sorted:
-          type: boolean
-        unsorted:
-          type: boolean
     Pageable:
       type: object
       properties:
-        offset:
-          type: integer
-          format: int64
-        page_number:
-          type: integer
-          format: int32
-        page_size:
-          type: integer
-          format: int32
-        paged:
-          type: boolean
-        sort:
-          $ref: '#/components/schemas/Sort'
-        unpaged:
-          type: boolean
+        definetly_not_pageable:
+          type: string
     PagedObject:
       type: object
       properties:
