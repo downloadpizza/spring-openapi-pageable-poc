@@ -1,0 +1,45 @@
+openapi: 3.0.3
+info:
+  title: POC
+  description: |
+    Idc
+  version: development
+
+tags: []
+paths: {}
+components:
+  schemas:
+    Sort:
+      type: object
+      properties:
+        empty:
+          type: boolean
+        sorted:
+          type: boolean
+        unsorted:
+          type: boolean
+    Pageable:
+      type: object
+      properties:
+        offset:
+          type: integer
+          format: int64
+        page_number:
+          type: integer
+          format: int32
+        page_size:
+          type: integer
+          format: int32
+        paged:
+          type: boolean
+        sort:
+          $ref: '#/components/schemas/Sort'
+        unpaged:
+          type: boolean
+    PagedObject:
+      type: object
+      properties:
+        value:
+          type: string
+        pageable:
+          $ref: '#/components/schemas/Pageable'
